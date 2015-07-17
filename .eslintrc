@@ -1,4 +1,5 @@
 {
+  "parser": "babel-eslint",
   "ecmaFeatures": {
     "modules": true
   },
@@ -6,6 +7,9 @@
     "browser": true
   },
   "rules": {
-    "quotes": [2, "single"]
+    "strict": 0,
+    "quotes": [2, "single"],
+    "no-unused-vars": [2, {"vars": "all", "args": "none"}],
+    "no-shadow": 0
   }
 }
