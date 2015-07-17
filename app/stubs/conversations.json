@@ -1,0 +1,36 @@
+[
+  {
+    "id": 1,
+    "participants": [
+      {
+        "id": 1,
+        "firstName": "Tim",
+        "lastName": "Kendrick"
+      },
+      {
+        "id": 2,
+        "firstName": "Arthur",
+        "lastName": "Comben"
+      },
+      {
+        "id": 3,
+        "firstName": "Sam",
+        "lastName": "Carr"
+      }
+    ],
+    "messages": [
+      {
+        "user": 1,
+        "text": "Hello from Tim"
+      },
+      {
+        "user": 2,
+        "text": "Hello from Arthur"
+      },
+      {
+        "user": 3,
+        "text": "Hello from Sam"
+      }
+    ]
+  }
+]

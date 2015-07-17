@@ -1,9 +1,15 @@
-<header>
-  <nav class="navbar navbar-default">
+<div class="Application">
+  <header class="Application-header navbar navbar-default">
     <div class="navbar-header">
       <a class="navbar-brand" href="/">Chatter</a>
     </div>
-  </nav>
-</header>
-
-{{outlet}}
+  </header>
+  <section class="Application-main">
+    <div class="Application-sidebar">
+      {{outlet "sidebar"}}
+    </div>
+    <div class="Application-content">
+      {{outlet}}
+    </div>
+  </section>
+</div>
