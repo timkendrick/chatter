@@ -9,7 +9,7 @@
   "rules": {
     "strict": 0,
     "quotes": [2, "single"],
-    "no-unused-vars": [2, {"vars": "all", "args": "none"}],
+    "no-unused-vars": 0,
     "no-shadow": 0
   }
 }

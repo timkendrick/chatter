@@ -1,0 +1,643 @@
+/*** uncss> filename: mockups/styles.css ***/
+
+@import url('http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic');
+
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  background-color: transparent;
+}
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+small {
+  font-size: 80%;
+}
+
+img {
+  border: 0;
+}
+
+button,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+button {
+  overflow: visible;
+}
+
+button {
+  text-transform: none;
+}
+
+button {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+textarea {
+  overflow: auto;
+}
+
+/*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
+
+@Message print {
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  a[href^="#"]:after {
+    content: "";
+  }
+
+  img {
+    page-break-inside: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+}
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('../fonts/glyphicons-halflings-regular.eot');
+  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
+* {
+  -ms-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*:before,
+*:after {
+  -ms-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.42857143;
+  color: #333333;
+  background-color: #f5f5f5;
+}
+
+button,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+a {
+  color: #448aff;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: #005cf6;
+  text-decoration: underline;
+}
+
+a:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+img {
+  vertical-align: middle;
+}
+
+.img-circle {
+  border-radius: 50%;
+}
+
+small {
+  font-size: 87%;
+}
+
+.text-muted {
+  color: #bdbdbd;
+}
+
+.text-success {
+  color: #3c763d;
+}
+
+ul {
+  margin-top: 0;
+  margin-bottom: 11px;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  height: 36px;
+  padding: 6px 12px;
+  font-size: 16px;
+  line-height: 1.42857143;
+  color: #555555;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -webkit-transition: all border-color ease-in-out .15s, box-shadow ease-in-out .15s ease-out;
+  -moz-transition: all border-color ease-in-out .15s, box-shadow ease-in-out .15s ease-out;
+  -o-transition: all border-color ease-in-out .15s, box-shadow ease-in-out .15s ease-out;
+  transition: all border-color ease-in-out .15s, box-shadow ease-in-out .15s ease-out;
+}
+
+.form-control:focus {
+  border-color: #448aff;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(68, 138, 255, 0.6);
+  -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(68, 138, 255, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(68, 138, 255, 0.6);
+}
+
+.form-control::-moz-placeholder {
+  color: #999999;
+  opacity: 1;
+}
+
+.form-control:-ms-input-placeholder {
+  color: #999999;
+}
+
+textarea.form-control {
+  height: auto;
+}
+
+.btn {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 16px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.btn:focus,
+.btn:active:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+.btn:hover,
+.btn:focus {
+  color: #333333;
+  text-decoration: none;
+}
+
+.btn:active {
+  outline: 0;
+  background-image: none;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  -moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+
+/*!
+ *  Font Awesome 4.3.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+ */
+
+/* FONT PATH
+ * -------------------------- */
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/fontawesome-webfont.eot?v=4.3.0');
+  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.3.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.3.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.3.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.3.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0);
+}
+
+/* makes the font 33% larger relative to the icon container */
+
+/* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
+   readers do not read off random characters that represent icons */
+
+.fa-circle:before {
+  content: "\f111";
+}
+
+
+
+
+/*!
+ *  Material Design Iconic Font 1.0.1 by Sergey Kupletsky (@zavoloklom) - http://zavoloklom.github.io/material-design-iconic-font/
+ *  License - https://github.com/zavoloklom/material-design-iconic-font/blob/gh-pages/License.md (Attribution-ShareAlike 4.0 International license)
+ */
+
+@font-face {
+  font-family: 'Material Design Iconic Font';
+  src: url('../fonts/Material-Design-Iconic-Font.eot?v=1.0.1');
+  src: url('../fonts/Material-Design-Iconic-Font.eot?#iefix&v=1.0.1') format('embedded-opentype'), url('../fonts/Material-Design-Iconic-Font.woff?v=1.0.1') format('woff'), url('../fonts/Material-Design-Iconic-Font.ttf?v=1.0.1') format('truetype'), url('../fonts/Material-Design-Iconic-Font.svg?v=1.0.1#Material-Design-Iconic-Font') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class*=" md-"] {
+  display: inline-block;
+  font: normal normal normal 14px/1 'Material Design Iconic Font';
+  font-size: inherit;
+  speak: none;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.md {
+  line-height: inherit;
+  vertical-align: bottom;
+}
+
+/* Material Design Iconic Font uses the Unicode Private Use Area (PUA) to ensure screen
+   readers do not read off random characters that represent icons */
+
+/* If you do not want use all icons you can disable icon set here */
+
+.md-comment:before {
+  content: "\f0de";
+}
+
+.md-person:before {
+  content: "\f2d8";
+}
+
+
+.text-xs {
+  font-size: 8px;
+}
+
+.btn {
+  font-size: 16px;
+}
+
+.btn-rounded {
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  line-height: 36px;
+  padding: 0;
+}
+
+.btn-rounded i.md:before {
+  top: -2px;
+  position: relative;
+}
+
+.btn-white {
+  color: #333333;
+  background-color: #ffffff;
+  border: 2px solid #eeeeee;
+  outline: none;
+}
+
+.btn-white:hover,
+.btn-white:focus,
+.btn-white:active {
+  color: #333333;
+  background-color: #e6e6e6;
+}
+
+.btn-white:active {
+  background-image: none;
+}
+
+.btn-white.btn-outline {
+  border: 2px solid #efefef;
+  color: #ccc;
+  background: none;
+}
+
+.btn-white.btn-outline:hover {
+  background: #efefef;
+  color: #424242;
+}
+
+.btn:focus,
+.btn:active:focus {
+  outline: none;
+}
+
+.form-control:hover {
+  border-color: #bebebe;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: #448aff;
+}
+
+.text-success {
+  color: #9ccc65;
+}
+
+.text-muted {
+  color: #bdbdbd;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+
+
+
+
+
+html,
+body {
+  -webkit-font-smoothing: antialiased;
+  height: 100%;
+}
+
+
+
+
+
+
+.Application {
+  font-family: 'Lato', sans-serif;
+  color: #212121;
+}
+
+.Application-sidebar {
+  float: left;
+  width: 250px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.Application-main {
+  margin-left: 250px;
+  height: 100%;
+  overflow-y: auto;
+  border-left: 1px solid #efefef;
+}
+
+.Application-main > * {
+    height: 100%;
+}
+
+
+
+.ContactsList {}
+
+.ContactsList-list {
+  margin-bottom: 20px;
+  padding-left: 0;
+}
+
+.ContactsList-item {
+  display: block;
+  border: 1px solid #eeeeee;
+  border-left: none;
+  border-right: none;
+  margin-bottom: -1px;
+}
+.ContactsList-item:first-child {
+  border-top: none;
+}
+.ContactsList-item:last-child {
+  margin-bottom: 0;
+}
+
+
+.ContactsListContact {
+  padding: 10px 15px 10px 10px;
+  background-color: #ffffff;
+  color: #333333;
+  font-size: 14px;
+  -webkit-user-select: none;
+}
+
+.ContactsListContact-avatar {
+  padding-right: 10px;
+}
+
+.ContactsListContact-name {
+  width: 100%;
+}
+
+.ContactsListContact-icon {
+  padding-left: 10px;
+}
+
+.ContactsListContact-avatar,
+.ContactsListContact-name,
+.ContactsListContact-icon {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.ContactsListContact-image {
+  border: 2px solid transparent;
+}
+
+.ContactsListContact i.md-comment {
+  vertical-align: middle;
+}
+
+.ContactsListContact.disabled {
+  color: #bdbdbd;
+}
+.ContactsListContact.disabled .ContactsListContact-image {
+  opacity: 0.7;
+}
+
+.ContactsListContact:not(.disabled) {
+  cursor: pointer;
+}
+.ContactsListContact:not(.disabled):hover {
+  background: #424242;
+  color: #fff;
+}
+.ContactsListContact:not(.disabled):hover .ContactsListContact-image {
+  border-color: #5c5c5c;
+}
+
+
+
+.Conversation {
+  position: relative;
+  background: #ffffff;
+}
+
+.Conversation-title {
+  display: block;
+  padding: 0 5px;
+  background: #448aff;
+  height: 25px;
+  line-height: 23px;
+}
+
+.Conversation-title span {
+  font-size: 13px;
+  color: #fff;
+}
+
+.Conversation-title span i {
+  font-size: 20px;
+}
+
+.Conversation-messages {
+  position: absolute;
+  top: 25px;
+  bottom: 70px;
+  width: 100%;
+  overflow-y: auto;
+}
+
+.Conversation-messages .ConversationMessage {
+  border-bottom: 1px solid #eeeeee;
+  line-height: 18px;
+  font-size: 14px;
+  padding: 10px;
+}
+
+.Conversation-messages .ConversationMessage.current-user {
+  background: #fafafa;
+}
+
+.Conversation-messages .ConversationMessage:last-child {
+  border-bottom: none;
+}
+
+.Conversation-send {
+  position: absolute;
+  bottom: 0;
+  height: 70px;
+  font-size: 13px;
+  background: #ffffff;
+  border-top: 1px solid #eeeeee;
+  padding: 5px 10px 5px 5px;
+}
+
+.Conversation-sendLeft,
+.Conversation-sendRight {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.Conversation-sendLeft {
+  width: 100%;
+}
+
+.Conversation-sendRight {
+  padding-left: 10px;
+}
+
+.Conversation-sendInput {
+  border: none;
+  height: 60px;
+  box-shadow: none;
+  resize: none;
+}
+
+
+
+.ConversationMessage {}
+
+.ConversationMessage-avatar {
+  display: block;
+  float: left;
+}
+
+.ConversationMessage-avatar {
+  padding-right: 10px;
+}
+
+.ConversationMessage-body {}
+
+.ConversationMessage-time {}
+
+.ConversationMessage.current-user {
+  text-align: right;
+}
+
+.ConversationMessage.current-user .ConversationMessage-avatar {
+  float: right;
+  padding-right: 0;
+  padding-left: 10px;
+}

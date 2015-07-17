@@ -1,0 +1,9 @@
+<div class="ConversationMessage {{if isCurrentUser 'current-user'}}">
+    <div class="ConversationMessage-avatar">
+        <img src="{{ message.user.image }}" class="img-circle" width="35">
+    </div>
+    <div class="ConversationMessage-body">{{ message.text }}</div>
+    <div class="ConversationMessage-time">
+        <small class="text-muted">{{ message.time }}</small>
+    </div>
+</div>

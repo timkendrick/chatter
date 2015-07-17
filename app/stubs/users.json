@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "firstName": "Tim",
+    "lastName": "Kendrick",
+    "image": "images/guy-5.jpg"
+  },
+  {
+    "id": 2,
+    "firstName": "Arthur",
+    "lastName": "Comben",
+    "image": "images/guy-6.jpg"
+  },
+  {
+    "id": 3,
+    "firstName": "Sam",
+    "lastName": "Carr",
+    "image": "images/guy-8.jpg"
+  }
+]

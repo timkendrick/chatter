@@ -1,8 +1,14 @@
-@import "./application";
-@import "./conversation";
+@import "base";
+@import "test";
+@import "pods/application/styles";
+@import "pods/conversation/styles";
 
 html,
 body,
-.ember-view {
+body > .ember-view {
   height: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
 }

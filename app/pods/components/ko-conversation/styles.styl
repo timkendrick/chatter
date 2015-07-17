@@ -1,0 +1,51 @@
+@import "./message/styles";
+
+.Conversation {
+  height: 100%;
+  position: relative;
+  background: #ffffff;
+}
+
+.Conversation-title {
+  display: block;
+  padding: 0 5px;
+  background: #448aff;
+  height: 25px;
+  line-height: 23px;
+}
+
+.Conversation-title span {
+  font-size: 13px;
+  color: #fff;
+  margin-right: 5px;
+}
+
+.Conversation-title span i {
+  font-size: 20px;
+}
+
+.Conversation-messages {
+  position: absolute;
+  top: 25px;
+  bottom: 0;
+  width: 100%;
+  overflow-y: auto;
+}
+
+.Conversation-messages .ember-view {
+  border-bottom: 1px solid #eeeeee;
+}
+
+.Conversation-messages .ember-view:last-child {
+  border-bottom: none;
+}
+
+.Conversation-messages .ConversationMessage {
+  line-height: 18px;
+  font-size: 14px;
+  padding: 10px;
+}
+
+.Conversation-messages .ConversationMessage.current-user {
+  background: #fafafa;
+}

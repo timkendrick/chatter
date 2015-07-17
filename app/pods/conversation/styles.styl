@@ -1,0 +1,48 @@
+@import "pods/components/ko-conversation/styles";
+
+.ConversationView {
+  position: relative;
+  height: 100%;
+}
+
+.ConversationView-messages {
+  position: absolute;
+  top: 0;
+  bottom: 70px;
+  width: 100%;
+
+  > .ember-view {
+    height: 100%;
+  }
+}
+
+.ConversationView-send {
+  position: absolute;
+  bottom: 0;
+  height: 70px;
+  font-size: 13px;
+  background: #ffffff;
+  border-top: 1px solid #eeeeee;
+  padding: 5px 10px 5px 5px;
+}
+
+.ConversationView-sendLeft,
+.ConversationView-sendRight {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.ConversationView-sendLeft {
+  width: 100%;
+}
+
+.ConversationView-sendRight {
+  padding-left: 10px;
+}
+
+.ConversationView-sendInput {
+  border: none;
+  height: 60px;
+  box-shadow: none;
+  resize: none;
+}

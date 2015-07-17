@@ -1,0 +1,9 @@
+<div class="ContactsList">
+  <ul class="ContactsList-list">
+    {{#each users as |user|}}
+    <li class="ContactsList-item">
+      {{ko-contacts-list/contact user=user}}
+    </li>
+    {{/each}}
+  </ul>
+</div>

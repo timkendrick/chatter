@@ -1,0 +1,52 @@
+.ContactsListContact {
+  padding: 10px 15px 10px 10px;
+  background-color: #ffffff;
+  color: #333333;
+  font-size: 14px;
+  -webkit-user-select: none;
+}
+
+.ContactsListContact-avatar {
+  padding-right: 10px;
+}
+
+.ContactsListContact-name {
+  width: 100%;
+}
+
+.ContactsListContact-icon {
+  padding-left: 10px;
+}
+
+.ContactsListContact-avatar,
+.ContactsListContact-name,
+.ContactsListContact-icon {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.ContactsListContact-image {
+  border: 2px solid transparent;
+}
+
+.ContactsListContact i.md-comment {
+  vertical-align: middle;
+}
+
+.ContactsListContact.disabled {
+  color: #bdbdbd;
+}
+.ContactsListContact.disabled .ContactsListContact-image {
+  opacity: 0.7;
+}
+
+.ContactsListContact:not(.disabled) {
+  cursor: pointer;
+}
+.ContactsListContact:not(.disabled):hover {
+  background: #424242;
+  color: #fff;
+}
+.ContactsListContact:not(.disabled):hover .ContactsListContact-image {
+  border-color: #5c5c5c;
+}

@@ -3,12 +3,13 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'chatter',
+    podModulePrefix: 'chatter/pods',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
     contentSecurityPolicy: {
-      'style-src': '\'self\' \'unsafe-inline\' maxcdn.bootstrapcdn.com',
-      'font-src': '\'self\' maxcdn.bootstrapcdn.com'
+      'style-src': '\'self\' \'unsafe-inline\' fonts.googleapis.com maxcdn.bootstrapcdn.com',
+      'font-src': '\'self\' fonts.gstatic.com maxcdn.bootstrapcdn.com'
     },
     EmberENV: {
       FEATURES: {

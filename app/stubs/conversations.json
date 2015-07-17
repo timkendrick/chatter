@@ -3,33 +3,99 @@
     "id": 1,
     "participants": [
       {
-        "id": 1,
-        "firstName": "Tim",
-        "lastName": "Kendrick"
+        "id": 1
       },
       {
-        "id": 2,
-        "firstName": "Arthur",
-        "lastName": "Comben"
+        "id": 2
       },
       {
-        "id": 3,
-        "firstName": "Sam",
-        "lastName": "Carr"
+        "id": 3
       }
     ],
     "messages": [
       {
-        "user": 1,
-        "text": "Hello from Tim"
+        "user": {
+          "id": 2
+        },
+        "text": "Hello from Arthur",
+        "time": 1437134400
       },
       {
-        "user": 2,
-        "text": "Hello from Arthur"
+        "user": {
+          "id": 1
+        },
+        "text": "Hello from Tim",
+        "time": 1437134460
       },
       {
-        "user": 3,
-        "text": "Hello from Sam"
+        "user": {
+          "id": 3
+        },
+        "text": "Hello from Sam",
+        "time": 1437134520
+      },
+      {
+        "user": {
+          "id": 2
+        },
+        "text": "Hello from Arthur",
+        "time": 1437134400
+      },
+      {
+        "user": {
+          "id": 1
+        },
+        "text": "Hello from Tim",
+        "time": 1437134460
+      },
+      {
+        "user": {
+          "id": 3
+        },
+        "text": "Hello from Sam",
+        "time": 1437134520
+      },
+      {
+        "user": {
+          "id": 2
+        },
+        "text": "Hello from Arthur",
+        "time": 1437134400
+      },
+      {
+        "user": {
+          "id": 1
+        },
+        "text": "Hello from Tim",
+        "time": 1437134460
+      },
+      {
+        "user": {
+          "id": 3
+        },
+        "text": "Hello from Sam",
+        "time": 1437134520
+      },
+      {
+        "user": {
+          "id": 2
+        },
+        "text": "Hello from Arthur",
+        "time": 1437134400
+      },
+      {
+        "user": {
+          "id": 1
+        },
+        "text": "Hello from Tim",
+        "time": 1437134460
+      },
+      {
+        "user": {
+          "id": 3
+        },
+        "text": "Hello from Sam",
+        "time": 1437134520
       }
     ]
   }
