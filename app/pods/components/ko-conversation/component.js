@@ -1,18 +1,15 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  initialize: function() {
+  messagesLoaded: function() {
     Ember.run.schedule('afterRender', () => {
       this.scrollToBottom({ animate: false });
-      let $messagesElement = this.$('.Conversation-messages');
-      $messagesElement.prop({ scrollTop: $messagesElement.prop('scrollHeight') });
     });
-  }.on('init'),
-  messagesChanged: function() {
-    Ember.run.schedule('afterRender', () => {
-      this.scrollToBottom({ animate: true });
-    });
-  }.observes('conversation.messages.@each'),
+    this.addObserver('conversation.messages.@each', this, 'messagesUpdated');
+  }.observes('conversation.messages'),
+  messagesUpdated: function() {
+    this.scrollToBottom({ animate: true });
+  },
   scrollToBottom: function({
     animate = false
   } = {}) {
