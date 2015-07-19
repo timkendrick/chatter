@@ -1,7 +1,7 @@
 <div class="Conversation">
   <div class="Conversation-title">
     {{#each conversation.participants as |participant|}}
-      <span class="bold"><i class="md md-person"></i> {{ participant.firstName }} {{ participant.lastName }}</span>
+      <span class="bold"><i class="md md-person"></i> {{full-name participant }}</span>
     {{/each}}
   </div>
   <div class="Conversation-messages">
