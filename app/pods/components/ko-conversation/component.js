@@ -20,5 +20,10 @@ export default Ember.Component.extend({
       } else {
         $messagesElement.prop({ scrollTop: maxScroll });
       }
+  },
+  actions: {
+    onClose: function() {
+      this.sendAction('close');
+    }
   }
 });

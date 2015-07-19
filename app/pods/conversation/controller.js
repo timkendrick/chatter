@@ -9,6 +9,9 @@ export default Ember.Controller.extend({
       let conversationService = this.get('conversationService');
       conversationService.sendMessage(conversation, message);
       this.set('inputMessage', null);
+    },
+    close: function() {
+      this.transitionToRoute('index');
     }
   }
 });

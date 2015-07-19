@@ -1,8 +1,15 @@
 <div class="Conversation">
   <div class="Conversation-title">
     {{#each conversation.participants as |participant|}}
-      <span class="bold"><i class="md md-person"></i> {{full-name participant }}</span>
+    <span class="bold">
+      <i class="md md-person"></i> {{full-name participant }}
+    </span>
     {{/each}}
+    <span class="Conversation-closeButton pull-right"
+      {{action "onClose"}}
+    >
+      <i class="md md-close"></i>
+    </span>
   </div>
   <div class="Conversation-messages">
     {{#each conversation.messages as |message|}}

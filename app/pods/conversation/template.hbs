@@ -1,8 +1,15 @@
 <div class="ConversationView">
   <div class="ConversationView-messages">
-    {{ko-conversation conversation=model.conversation currentUser=model.currentUser}}
+    {{ko-conversation
+      conversation=model.conversation
+      currentUser=model.currentUser
+      close="close"
+    }}
   </div>
   <div class="ConversationView-send">
-    {{ko-message-field value=inputMessage action="sendMessage"}}
+    {{ko-message-field
+      value=inputMessage
+      action="sendMessage"
+    }}
   </div>
 </div>
