@@ -1,8 +1,14 @@
 <div class="ContactsList">
   <ul class="ContactsList-list">
-    {{#each users as |user|}}
+    {{#each items as |item|}}
     <li class="ContactsList-item">
-      {{ko-contacts-list/contact user=user}}
+      {{ko-contacts-list/contact
+        text=item.text
+        image=item.image
+        icon=item.icon
+        disabled=item.disabled
+        selected=item.selected
+      }}
     </li>
     {{/each}}
   </ul>

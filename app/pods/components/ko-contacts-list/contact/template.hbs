@@ -1,11 +1,13 @@
-<div class="ContactsListContact">
+<div class="ContactsListContact {{if selected "selected"}} {{if disabled "disabled"}}">
     <div class="ContactsListContact-avatar">
-        <img src="{{ user.image }}" class="ContactsListContact-image img-circle border-white" width="40">
+        <img src="{{image}}" class="ContactsListContact-image img-circle border-white" width="40">
     </div>
     <div class="ContactsListContact-name">
-        {{ user.firstName }} {{ user.lastName }}
+        {{text}}
     </div>
+    {{#if icon}}
     <div class="ContactsListContact-icon">
-        <i class="md md-comment text-muted"></i>
+        <i class="{{icon}}"></i>
     </div>
+    {{/if}}
 </div>
