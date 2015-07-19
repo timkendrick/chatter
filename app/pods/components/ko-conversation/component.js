@@ -4,7 +4,7 @@ export default Ember.Component.extend({
   initialize: function() {
     Ember.run.schedule('afterRender', () => {
       this.scrollToBottom({ animate: false });
-      let $messagesElement = this.$().find('.Conversation-messages');
+      let $messagesElement = this.$('.Conversation-messages');
       $messagesElement.prop({ scrollTop: $messagesElement.prop('scrollHeight') });
     });
   }.on('init'),
@@ -16,7 +16,7 @@ export default Ember.Component.extend({
   scrollToBottom: function({
     animate = false
   } = {}) {
-      let $messagesElement = this.$().find('.Conversation-messages');
+      let $messagesElement = this.$('.Conversation-messages');
       let maxScroll = $messagesElement.prop('scrollHeight');
       if (animate) {
         $messagesElement.animate({ scrollTop: maxScroll });
