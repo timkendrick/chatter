@@ -1,8 +1,10 @@
 import Ember from 'ember';
 
+import Focusable from '../../../mixins/focusable';
+
 const KEYCODE_ENTER = 13;
 
-export default Ember.Component.extend({
+export default Ember.Component.extend(Focusable, {
   value: null,
   isSubmitDisabled: function() {
     return !this.get('value');
