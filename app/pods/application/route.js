@@ -11,7 +11,6 @@ export default Ember.Route.extend({
     let currentUser = usersService.getCurrentUser();
     let contacts = users.filter((user) => user.id !== currentUser.id)
       .map((user) => {
-        let userId = user.id;
         let contactImage = user.image;
         let contactName = getUserName(user);
         let contactIsOnline = true;
@@ -23,7 +22,7 @@ export default Ember.Route.extend({
           disabled: !contactIsOnline,
           selected: false,
           data: {
-            id: userId
+            user: user
           }
         };
       });

@@ -1,9 +1,9 @@
 <div class="Application">
   <div class="Application-sidebar">
   <div class="Application-sidebarSectionHeader small bold">Conversations</div>
-    {{ko-contacts-list items=model.conversations}}
+    {{ko-contacts-list items=model.conversations action="showConversation"}}
     <div class="Application-sidebarSectionHeader small bold">Contacts</div>
-    {{ko-contacts-list items=model.contacts}}
+    {{ko-contacts-list items=model.contacts action="startChat"}}
   </div>
   <div class="Application-main">
     {{outlet}}
