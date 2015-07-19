@@ -98,5 +98,74 @@
         "time": 1437134520
       }
     ]
+  },
+  {
+    "id": 2,
+    "participants": [
+      {
+        "id": 1
+      },
+      {
+        "id": 2
+      }
+    ],
+    "messages": [
+      {
+        "user": {
+          "id": 2
+        },
+        "text": "Hello from Arthur",
+        "time": 1437134400
+      },
+      {
+        "user": {
+          "id": 1
+        },
+        "text": "Hello from Tim",
+        "time": 1437134460
+      },
+      {
+        "user": {
+          "id": 2
+        },
+        "text": "Hello from Arthur",
+        "time": 1437134400
+      },
+      {
+        "user": {
+          "id": 1
+        },
+        "text": "Hello from Tim",
+        "time": 1437134460
+      },
+      {
+        "user": {
+          "id": 2
+        },
+        "text": "Hello from Arthur",
+        "time": 1437134400
+      },
+      {
+        "user": {
+          "id": 1
+        },
+        "text": "Hello from Tim",
+        "time": 1437134460
+      },
+      {
+        "user": {
+          "id": 2
+        },
+        "text": "Hello from Arthur",
+        "time": 1437134400
+      },
+      {
+        "user": {
+          "id": 1
+        },
+        "text": "Hello from Tim",
+        "time": 1437134460
+      }
+    ]
   }
 ]
