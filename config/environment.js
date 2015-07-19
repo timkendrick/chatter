@@ -8,8 +8,8 @@ module.exports = function(environment) {
     baseURL: '/',
     locationType: 'auto',
     contentSecurityPolicy: {
-      'style-src': '\'self\' \'unsafe-inline\' fonts.googleapis.com maxcdn.bootstrapcdn.com',
-      'font-src': '\'self\' fonts.gstatic.com maxcdn.bootstrapcdn.com'
+      'style-src': '\'self\' \'unsafe-inline\' fonts.googleapis.com maxcdn.bootstrapcdn.com cdnjs.cloudflare.com',
+      'font-src': '\'self\' fonts.gstatic.com maxcdn.bootstrapcdn.com cdnjs.cloudflare.com'
     },
     EmberENV: {
       FEATURES: {

@@ -59,7 +59,7 @@ export default Ember.Route.extend({
             .map(
               (user) => user.firstName
             ).join(', ');
-          let conversationIcon = 'md md-comment text-muted';
+          let conversationIcon = 'zmdi zmdi-comment-alt-text text-muted';
           return {
             image: conversationImage,
             text: conversationName,

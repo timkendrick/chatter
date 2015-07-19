@@ -2,8 +2,151 @@
 
 .Application {
   height: 100%;
+  font-size: 16px;
+  line-height: 1.42857143;
   font-family: 'Lato', sans-serif;
   color: #212121;
+  background-color: #f5f5f5;
+  -webkit-font-smoothing: antialiased;
+
+  h1,
+  .h1,
+  h2,
+  .h2,
+  h3,
+  .h3 {
+    margin-top: 22px;
+    margin-bottom: 11px;
+  }
+  h4,
+  .h4,
+  h5,
+  .h5,
+  h6,
+  .h6 {
+    margin-top: 11px;
+    margin-bottom: 11px;
+  }
+  h1,
+  .h1 {
+    font-size: 41px;
+  }
+  h2,
+  .h2 {
+    font-size: 34px;
+  }
+  h3,
+  .h3 {
+    font-size: 28px;
+  }
+  h4,
+  .h4 {
+    font-size: 20px;
+  }
+  h5,
+  .h5 {
+    font-size: 16px;
+  }
+  h6,
+  .h6 {
+    font-size: 14px;
+  }
+  p {
+    margin: 0 0 11px;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5 {
+    font-weight: 600;
+  }
+
+  .text-xs {
+    font-size: 8px;
+  }
+
+  .btn {
+    font-size: 16px;
+  }
+
+  .btn-rounded {
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+    line-height: 36px;
+    padding: 0;
+  }
+
+  .btn-rounded i:before {
+    top: -2px;
+    position: relative;
+  }
+
+  .btn-white {
+    color: #333333;
+    background-color: #ffffff;
+    border: 2px solid #eeeeee;
+    outline: none;
+  }
+
+  .btn-white:hover,
+  .btn-white:focus,
+  .btn-white:active {
+    color: #333333;
+    background-color: #e6e6e6;
+  }
+
+  .btn-white:active {
+    background-image: none;
+  }
+
+  .btn-white.btn-outline {
+    border: 2px solid #efefef;
+    color: #ccc;
+    background: none;
+  }
+
+  .btn-white.btn-outline:hover {
+    background: #efefef;
+    color: #424242;
+  }
+
+  .btn:focus,
+  .btn:active:focus {
+    outline: none;
+  }
+
+  .form-control:hover {
+    border-color: #bebebe;
+  }
+
+  .form-control:focus {
+    box-shadow: none;
+    border-color: #448aff;
+  }
+
+  .text-success {
+    color: #9ccc65;
+  }
+
+  .text-muted {
+    color: #bdbdbd;
+  }
+
+  .bold {
+    font-weight: 600;
+  }
+
+  .zmdi {
+    line-height: inherit;
+    vertical-align: bottom;
+  }
 }
 
 .Application-sidebar {
