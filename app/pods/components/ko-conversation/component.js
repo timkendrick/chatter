@@ -15,6 +15,10 @@ export default Ember.Component.extend({
   } = {}) {
       let $messagesElement = this.$('.Conversation-messages');
       let maxScroll = $messagesElement.prop('scrollHeight');
+      if (maxScroll <= 0) { return; }
+      let currentScrollPosition = $messagesElement.prop('scrollTop');
+      let isAlreadyAtBottom = currentScrollPosition >= maxScroll;
+      if (isAlreadyAtBottom) { return; }
       if (animate) {
         $messagesElement.animate({ scrollTop: maxScroll });
       } else {
