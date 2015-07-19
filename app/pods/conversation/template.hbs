@@ -2,15 +2,7 @@
   <div class="ConversationView-messages">
     {{ko-conversation conversation=model.conversation currentUser=model.currentUser}}
   </div>
-  <form class="ConversationView-send" {{action 'sendMessage' inputMessage on='submit'}}>
-    <p>Current value: {{inputMessage}}</p>
-    <div class="ConversationView-sendLeft">
-        {{ko-textarea value=inputMessage submit='sendMessage'}}
-    </div>
-    <div class="ConversationView-sendRight">
-        <button class="btn btn-white btn-outline btn-rounded" data-toggle="dropdown" disabled={{isSendDisabled}}>
-            <i class="md md-comment"></i>
-        </button>
-    </div>
-  </form>
+  <div class="ConversationView-send">
+    {{ko-message-field value=inputMessage action="sendMessage"}}
+  </div>
 </div>

@@ -1,0 +1,12 @@
+<form class="MessageField" {{action "onSubmit" on="submit"}}>
+  <div class="MessageField-inputContainer">
+    {{textarea class="MessageField-input form-control" type="text" placeholder="Write Message"
+      value=value
+    }}
+  </div>
+  <div class="MessageField-submitContainer">
+      <button class="MessageField-submit btn btn-white btn-outline btn-rounded" data-toggle="dropdown" disabled={{isSubmitDisabled}}>
+          <i class="md md-comment"></i>
+      </button>
+  </div>
+</form>
