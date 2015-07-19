@@ -16,6 +16,8 @@ conversations.forEach((conversation) => {
 });
 
 export default Ember.Service.extend({
+  usersService: Ember.inject.service('users'),
+  conversations: conversations,
   getConversations: function() {
     return conversations;
   },
@@ -24,9 +26,24 @@ export default Ember.Service.extend({
       (conversation) => conversation.id === conversationId
     )[0] || null;
   },
+  createConversation: function(participants) {
+    let usersService = this.get('usersService');
+    let conversationId = conversations.length + 1;
+    let currentUser = usersService.getCurrentUser();
+    let conversationParticipants = [currentUser].concat(participants);
+    let conversationMessages = [];
+    let conversation = {
+      id: conversationId,
+      participants: conversationParticipants,
+      messages: conversationMessages
+    };
+    conversations.pushObject(conversation);
+    return conversation;
+  },
   sendMessage: function(conversation, messageText) {
-    var currentUser = users[0];
-    var message = {
+    let usersService = this.get('usersService');
+    let currentUser = usersService.getCurrentUser();
+    let message = {
       user: currentUser,
       text: messageText,
       time: new Date()

@@ -15,6 +15,7 @@ export default Ember.Controller.extend({
       this.set('currentConversation', currentConversation);
     });
   },
+  conversationService: Ember.inject.service('conversation'),
   currentConversation: null,
   updateCurrentConversation: function() {
     let currentConversation = this.get('currentConversation');
@@ -31,8 +32,11 @@ export default Ember.Controller.extend({
       this.transitionToRoute('conversation', conversationId);
     },
     startChat: function(item) {
+      let conversationService = this.get('conversationService');
       let user = item.data.user;
-      // TODO: Start a new chat
+      let participants = [user];
+      let conversation = conversationService.createConversation(participants);
+      this.transitionToRoute('conversation', conversation.id);
     }
   }
 });
