@@ -9,6 +9,7 @@
   "rules": {
     "strict": 0,
     "quotes": [2, "single"],
+    "no-underscore-dangle": 0,
     "no-unused-vars": 0,
     "no-shadow": 0
   }
