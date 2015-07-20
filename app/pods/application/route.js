@@ -8,11 +8,11 @@ export default Ember.Route.extend({
     let usersService = this.get('usersService');
     let conversationService = this.get('conversationService');
 
-    let appModel = {
+    let appModel = Ember.Object.create({
       currentUser: getCurrentUser(usersService),
       contacts: getContactListItems(usersService),
       conversations: getConversationListItems(conversationService, usersService)
-    };
+    });
 
     conversationService.addObserver('conversations.@each', () => {
       Ember.set(appModel, 'conversations', getConversationListItems(conversationService, usersService));
@@ -26,15 +26,15 @@ export default Ember.Route.extend({
     }
 
     function getContactListItems(usersService) {
-      let users = usersService.getUsers();
+      let users = usersService.get('users');
       let currentUser = usersService.getCurrentUser();
-      let contacts = users.filter((user) => user.id !== currentUser.id)
+      let contacts = users.filter((user) => user.get('id') !== currentUser.get('id'))
         .map((user) => {
-          let contactImage = user.image;
+          let contactImage = user.get('image');
           let contactName = getUserName(user);
           let contactIsOnline = true;
           let contactIcon = (contactIsOnline ? 'fa fa-circle text-success text-xs' : null);
-          return {
+          return Ember.Object.create({
             image: contactImage,
             text: contactName,
             icon: contactIcon,
@@ -43,24 +43,24 @@ export default Ember.Route.extend({
             data: {
               user: user
             }
-          };
+          });
         });
       return contacts;
     }
 
     function getConversationListItems(conversationService, usersService) {
       let currentUser = usersService.getCurrentUser();
-      let conversations = conversationService.getConversations()
+      let conversations = conversationService.get('conversations')
         .map((conversation) => {
           let conversationId = conversation.id;
           let conversationImage = conversation.participants[0].image;
           let conversationName = conversation.participants
-            .filter((user) => user.id !== currentUser.id)
+            .filter((user) => user.get('id') !== currentUser.get('id'))
             .map(
-              (user) => user.firstName
+              (user) => user.get('firstName')
             ).join(', ');
           let conversationIcon = 'zmdi zmdi-comment-alt-text text-muted';
-          return {
+          return Ember.Object.create({
             image: conversationImage,
             text: conversationName,
             icon: conversationIcon,
@@ -69,7 +69,7 @@ export default Ember.Route.extend({
             data: {
               id: conversationId
             }
-          };
+          });
         });
       return conversations;
     }

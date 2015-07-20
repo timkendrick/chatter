@@ -20,20 +20,20 @@ export default Ember.Controller.extend({
   updateCurrentConversation: function() {
     let currentConversation = this.get('currentConversation');
     this.get('model').conversations.forEach(
-      (conversation, index) => {
-        let isCurrentConversation = currentConversation && (conversation.data.id === currentConversation.id);
-        Ember.set(conversation, 'selected', isCurrentConversation);
+      (conversationItem, index) => {
+        let isCurrentConversation = currentConversation && (conversationItem.get('data').id === currentConversation.get('id'));
+        conversationItem.set('selected', isCurrentConversation);
       }
     );
   }.observes('currentConversation'),
   actions: {
     showConversation: function(item) {
-      let conversationId = item.data.id;
+      let conversationId = item.get('data').id;
       this.transitionToRoute('conversation', conversationId);
     },
     startChat: function(item) {
       let conversationService = this.get('conversationService');
-      let user = item.data.user;
+      let user = item.get('data').user;
       let participants = [user];
       let conversation = conversationService.createConversation(participants);
       this.transitionToRoute('conversation', conversation.id);

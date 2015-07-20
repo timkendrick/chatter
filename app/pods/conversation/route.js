@@ -13,7 +13,6 @@ export default Ember.Route.extend({
       return null;
     }
     let currentUser = usersService.getCurrentUser();
-
     return {
       conversation: conversation,
       currentUser: currentUser

@@ -1,12 +1,21 @@
 import Ember from 'ember';
 
-import users from '../stubs/users';
+import userStubs from '../stubs/users';
 
 export default Ember.Service.extend({
-  getUsers: function() {
-    return users;
+  init: function() {
+    this._super();
+    let users = createUserModels(userStubs);
+    this.set('users', users);
   },
+  users: null,
   getCurrentUser: function() {
-    return users[0];
+    return this.get('users')[0];
   }
 });
+
+function createUserModels(userStubs) {
+  return userStubs.map(
+    (userStub) => Ember.Object.create(userStub)
+  );
+}

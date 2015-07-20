@@ -5,11 +5,17 @@ export default Ember.Component.extend({
     Ember.run.schedule('afterRender', () => {
       this.scrollToBottom({ animate: false });
     });
-    this.addObserver('conversation.messages.@each', this, 'messagesUpdated');
+    let messages = this.get('conversation.messages');
+    let onMessagesUpdated = () => {
+      this.scrollToBottom({ animate: true });
+    };
+    let onMessagesChanged = () => {
+      messages.removeObserver('@each', onMessagesUpdated);
+      this.removeObserver('conversation.messages', onMessagesChanged);
+    };
+    messages.addObserver('@each', onMessagesUpdated);
+    this.addObserver('conversation.messages', onMessagesChanged);
   }.observes('conversation.messages'),
-  messagesUpdated: function() {
-    this.scrollToBottom({ animate: true });
-  },
   scrollToBottom: function({
     animate = false
   } = {}) {
