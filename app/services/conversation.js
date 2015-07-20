@@ -21,17 +21,45 @@ export default Ember.Service.extend({
   createConversation: function(participants) {
     let usersService = this.get('usersService');
     let conversations = this.get('conversations');
-    let conversationId = conversations.length + 1;
     let currentUser = usersService.getCurrentUser();
-    let conversationParticipants = [currentUser].concat(participants);
-    let conversationMessages = [];
-    let conversation = Ember.Object.create({
-      id: conversationId,
-      participants: conversationParticipants,
-      messages: conversationMessages
-    });
+    participants = [currentUser].concat(participants);
+    let existingConversation = findExistingConversation(participants, conversations);
+    if (existingConversation) {
+      return existingConversation;
+    }
+    let conversation = createConversation(participants, conversations);
     conversations.pushObject(conversation);
     return conversation;
+
+
+    function findExistingConversation(participants, conversations) {
+      let sortedParticipants = participants.slice().sort(
+        (user1, user2) => user1.get('id') - user2.get('id')
+      );
+      return conversations.filter(
+        (conversation) => {
+          let hasSameParticipants =
+            (conversation.participants.length === participants.length) &&
+            conversation.participants.slice().sort(
+              (user1, user2) => user1.get('id') - user2.get('id')
+            ).every(
+              (participant, index) => participant.get('id') === sortedParticipants[index].get('id')
+            );
+          return hasSameParticipants;
+        }
+      )[0] || null;
+    }
+
+    function createConversation(participants, conversations) {
+      let conversationId = conversations.length + 1;
+      let conversationMessages = [];
+      let conversation = Ember.Object.create({
+        id: conversationId,
+        participants: participants,
+        messages: conversationMessages
+      });
+      return conversation;
+    }
   },
   sendMessage: function(conversation, messageText) {
     let usersService = this.get('usersService');
