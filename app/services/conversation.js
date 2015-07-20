@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 import conversationStubs from '../stubs/conversations';
 
+import CompositeModel from '../models/composite';
 import ConversationModel from '../models/conversation';
 import ConversationStateModel from '../models/conversation-state';
 import ConversationMessageModel from '../models/conversation-message';
@@ -16,8 +17,7 @@ export default Ember.Service.extend({
     let conversations = conversationModels.map(
       (conversationModel) => {
         let conversationId = conversationModel.get('id');
-        return Ember.Object.create({
-          id: conversationId,
+        return CompositeModel.create({
           model: conversationModel,
           state: ConversationStateModel.create()
         });
@@ -75,11 +75,11 @@ export default Ember.Service.extend({
         participants: participants,
         messages: conversationMessages
       });
-      return Ember.Object.create({
-        id: conversationId,
+      let conversation = CompositeModel.create({
         model: conversationModel,
         state: ConversationStateModel.create()
       });
+      return conversation;
     }
   },
   sendMessage: function(conversation, messageText) {
