@@ -52,9 +52,10 @@ export default Ember.Route.extend({
       let currentUser = usersService.getCurrentUser();
       let conversations = conversationService.get('conversations')
         .map((conversation) => {
-          let conversationId = conversation.id;
-          let conversationImage = conversation.participants[0].image;
-          let conversationName = conversation.participants
+          let conversationId = conversation.get('id');
+          let conversationParticipants = conversation.get('participants');
+          let conversationImage = conversationParticipants[0].image;
+          let conversationName = conversationParticipants
             .filter((user) => user.get('id') !== currentUser.get('id'))
             .map(
               (user) => user.get('firstName')
