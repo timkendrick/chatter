@@ -2,9 +2,8 @@ import Ember from 'ember';
 
 import conversationStubs from '../stubs/conversations';
 
-import CompositeModel from '../models/composite';
+import ConversationCompositeModel from '../models/conversation-composite';
 import ConversationModel from '../models/conversation';
-import ConversationStateModel from '../models/conversation-state';
 import ConversationMessageModel from '../models/conversation-message';
 import UserModel from '../models/user';
 
@@ -17,9 +16,8 @@ export default Ember.Service.extend({
     let conversations = conversationModels.map(
       (conversationModel) => {
         let conversationId = conversationModel.get('id');
-        return CompositeModel.create({
-          model: conversationModel,
-          state: ConversationStateModel.create()
+        return ConversationCompositeModel.create({
+          model: conversationModel
         });
       }
     );
@@ -75,9 +73,8 @@ export default Ember.Service.extend({
         participants: participants,
         messages: conversationMessages
       });
-      let conversation = CompositeModel.create({
-        model: conversationModel,
-        state: ConversationStateModel.create()
+      let conversation = ConversationCompositeModel.create({
+        model: conversationModel
       });
       return conversation;
     }
