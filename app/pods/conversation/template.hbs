@@ -1,14 +1,14 @@
 <div class="ConversationView">
   <div class="ConversationView-messages">
     {{ko-conversation
-      conversation=model.model
+      conversation=model
       currentUser=currentUser
       close="close"
     }}
   </div>
   <div class="ConversationView-send">
     {{ko-message-field
-      value=model.viewModel.draft
+      value=state.draft
       focused=true
       action="sendMessage"
     }}

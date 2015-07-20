@@ -8,6 +8,7 @@ export default Ember.Controller.extend({
     this.set('currentUser', currentUser);
   },
   model: null,
+  state: null,
   currentUser: null,
   focused: false,
   usersService: Ember.inject.service('users'),
@@ -17,7 +18,7 @@ export default Ember.Controller.extend({
       let conversation = this.get('model');
       let conversationService = this.get('conversationService');
       conversationService.sendMessage(conversation, message);
-      this.set('model.viewModel.draft', null);
+      this.set('state.draft', null);
     },
     close: function() {
       this.transitionToRoute('index');

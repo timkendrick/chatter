@@ -12,5 +12,9 @@ export default Ember.Route.extend({
       return null;
     }
     return conversation;
+  },
+  setupController: function(controller, model) {
+    controller.set('model', model.get('model'));
+    controller.set('state', model.get('state'));
   }
 });

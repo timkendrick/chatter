@@ -3,7 +3,7 @@ import Ember from 'ember';
 import conversationStubs from '../stubs/conversations';
 
 import ConversationModel from '../models/conversation';
-import ConversationViewModel from '../models/conversation-view';
+import ConversationStateModel from '../models/conversation-state';
 import ConversationMessageModel from '../models/conversation-message';
 import UserModel from '../models/user';
 
@@ -16,11 +16,10 @@ export default Ember.Service.extend({
     let conversations = conversationModels.map(
       (conversationModel) => {
         let conversationId = conversationModel.get('id');
-        let conversationViewModel = ConversationViewModel.create();
         return Ember.Object.create({
           id: conversationId,
           model: conversationModel,
-          viewModel: conversationViewModel
+          state: ConversationStateModel.create()
         });
       }
     );
@@ -79,7 +78,7 @@ export default Ember.Service.extend({
       return Ember.Object.create({
         id: conversationId,
         model: conversationModel,
-        viewModel: ConversationViewModel.create()
+        state: ConversationStateModel.create()
       });
     }
   },
@@ -91,7 +90,7 @@ export default Ember.Service.extend({
       text: messageText,
       time: new Date()
     });
-    conversation.get('model').messages.pushObject(message);
+    conversation.messages.pushObject(message);
   }
 });
 
