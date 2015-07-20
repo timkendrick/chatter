@@ -8,17 +8,17 @@ export default Ember.Route.extend({
     let usersService = this.get('usersService');
     let conversationService = this.get('conversationService');
 
-    let appModel = Ember.Object.create({
+    let model = Ember.Object.create({
       currentUser: getCurrentUser(usersService),
       contacts: getContactListItems(usersService),
       conversations: getConversationListItems(conversationService, usersService)
     });
 
     conversationService.addObserver('conversations.@each', () => {
-      Ember.set(appModel, 'conversations', getConversationListItems(conversationService, usersService));
+      model.set('conversations', getConversationListItems(conversationService, usersService));
     });
 
-    return appModel;
+    return model;
 
 
     function getCurrentUser(usersService) {
@@ -52,8 +52,9 @@ export default Ember.Route.extend({
       let currentUser = usersService.getCurrentUser();
       let conversations = conversationService.get('conversations')
         .map((conversation) => {
-          let conversationId = conversation.get('id');
-          let conversationParticipants = conversation.get('participants');
+          let conversationModel = conversation.get('model');
+          let conversationId = conversationModel.get('id');
+          let conversationParticipants = conversationModel.get('participants');
           let conversationImage = conversationParticipants[0].image;
           let conversationName = conversationParticipants
             .filter((user) => user.get('id') !== currentUser.get('id'))

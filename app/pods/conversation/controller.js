@@ -1,18 +1,23 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  inputMessage: null,
+  init: function() {
+    this._super();
+    let usersService = this.get('usersService');
+    let currentUser = usersService.getCurrentUser();
+    this.set('currentUser', currentUser);
+  },
+  model: null,
+  currentUser: null,
   focused: false,
+  usersService: Ember.inject.service('users'),
   conversationService: Ember.inject.service('conversation'),
-  updateConversation: function() {
-    this.set('inputMessage', null);
-  }.observes('model.conversation'),
   actions: {
     sendMessage: function(message) {
-      let conversation = this.get('model').conversation;
+      let conversation = this.get('model');
       let conversationService = this.get('conversationService');
       conversationService.sendMessage(conversation, message);
-      this.set('inputMessage', null);
+      this.set('model.viewModel.draft', null);
     },
     close: function() {
       this.transitionToRoute('index');

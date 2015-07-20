@@ -6,18 +6,23 @@ export default Ember.Controller.extend({
     let router = this.container.lookup('router:main');
     router.on('didTransition', () => {
       let currentPath = this.get('currentPath');
+      if (currentPath !== 'conversation') {
+        this.set('currentConversation', null);
+        return;
+      }
       let routes = router.get('router.currentHandlerInfos');
       let currentRoute = routes.filter(
         (route) => route.name === currentPath
       )[0] || null;
-      let routeParams = currentRoute.handler.context;
-      let currentConversation = routeParams.conversation;
+      let routeModel = currentRoute.handler.context;
+      let currentConversation = routeModel;
       this.set('currentConversation', currentConversation);
     });
   },
   conversationService: Ember.inject.service('conversation'),
   usersService: Ember.inject.service('users'),
   currentConversation: null,
+  model: null,
   updateCurrentConversation: function() {
     let currentConversation = this.get('currentConversation');
     this.get('model').conversations.forEach(

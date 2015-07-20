@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 import userStubs from '../stubs/users';
+import UserModel from '../models/user';
 
 export default Ember.Service.extend({
   init: function() {
@@ -16,6 +17,6 @@ export default Ember.Service.extend({
 
 function createUserModels(userStubs) {
   return userStubs.map(
-    (userStub) => Ember.Object.create(userStub)
+    (userStub) => UserModel.create(userStub)
   );
 }
