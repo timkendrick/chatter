@@ -55,7 +55,7 @@ export default Ember.Route.extend({
           let conversationModel = conversation.get('model');
           let conversationId = conversationModel.get('id');
           let conversationParticipants = conversationModel.get('participants');
-          let conversationImage = conversationParticipants[0].image;
+          let conversationImage = conversationParticipants[0].get('image');
           let conversationName = conversationParticipants
             .filter((user) => user.get('id') !== currentUser.get('id'))
             .map(
