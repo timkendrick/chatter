@@ -4,7 +4,6 @@ export default Ember.Controller.extend({
   model: null,
   state: null,
   currentUser: null,
-  focused: false,
   usersService: Ember.inject.service('users'),
   conversationService: Ember.inject.service('conversation'),
   actions: {
