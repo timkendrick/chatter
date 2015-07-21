@@ -1,8 +1,7 @@
-import Ember from 'ember';
+import DS from 'ember-data';
 
-export default Ember.Object.extend({
-  id: null,
-  firstName: null,
-  lastName: null,
-  image: null
+export default DS.Model.extend({
+  firstName: DS.attr('string'),
+  lastName: DS.attr('string'),
+  image: DS.attr('string')
 });

@@ -1,12 +1,6 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  init: function() {
-    this._super();
-    let usersService = this.get('usersService');
-    let currentUser = usersService.getCurrentUser();
-    this.set('currentUser', currentUser);
-  },
   model: null,
   state: null,
   currentUser: null,
@@ -14,11 +8,13 @@ export default Ember.Controller.extend({
   usersService: Ember.inject.service('users'),
   conversationService: Ember.inject.service('conversation'),
   actions: {
-    sendMessage: function(message) {
+    sendMessage: function(messageText) {
       let conversation = this.get('model');
       let conversationService = this.get('conversationService');
-      conversationService.sendMessage(conversation, message);
-      this.set('state.draft', null);
+      conversationService.sendMessage(conversation, messageText)
+        .then((message) => {
+          this.set('state.draft', null);
+        });
     },
     close: function() {
       this.transitionToRoute('index');

@@ -1,12 +1,24 @@
-.ConversationMessage {}
+.ConversationMessage {
+  height: 57px;
+
+  &:after {
+    clear: both;
+    display: block;
+    content: '';
+  }
+}
 
 .ConversationMessage-avatar {
   display: block;
   float: left;
-}
+  margin-right: 10px;
+  width: 35px;
+  height: 35px;
 
-.ConversationMessage-avatar {
-  padding-right: 10px;
+  img {
+    width: 35px;
+    height: 35px;
+  }
 }
 
 .ConversationMessage-body {}
@@ -17,6 +29,6 @@
 
 .ConversationMessage.current-user .ConversationMessage-avatar {
   float: right;
-  padding-right: 0;
-  padding-left: 10px;
+  margin-right: 0;
+  margin-left: 10px;
 }

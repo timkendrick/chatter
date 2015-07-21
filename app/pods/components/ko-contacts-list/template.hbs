@@ -1,6 +1,6 @@
 <div class="ContactsList">
   <ul class="ContactsList-list">
-    {{#each items as |item|}}
+    {{#each items key="key" as |item|}}
     <li class="ContactsList-item">
       {{ko-contacts-list/contact
         text=item.text

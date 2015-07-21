@@ -1,99 +1,77 @@
 [
   {
     "id": 1,
-    "participants": [
-      {
-        "id": 1
-      },
-      {
-        "id": 2
-      },
-      {
-        "id": 3
-      }
-    ],
+    "participants": [1, 2, 3],
     "messages": [
       {
-        "user": {
-          "id": 2
-        },
+        "id": 1,
+        "user": 2,
         "text": "Hello from Arthur",
         "time": 1437134400
       },
       {
-        "user": {
-          "id": 1
-        },
+        "id": 2,
+        "user": 1,
         "text": "Hello from Tim",
         "time": 1437134460
       },
       {
-        "user": {
-          "id": 3
-        },
+        "id": 3,
+        "user": 3,
         "text": "Hello from Sam",
         "time": 1437134520
       },
       {
-        "user": {
-          "id": 2
-        },
+        "id": 4,
+        "user": 2,
         "text": "Hello from Arthur",
         "time": 1437134400
       },
       {
-        "user": {
-          "id": 1
-        },
+        "id": 5,
+        "user": 1,
         "text": "Hello from Tim",
         "time": 1437134460
       },
       {
-        "user": {
-          "id": 3
-        },
+        "id": 6,
+        "user": 3,
         "text": "Hello from Sam",
         "time": 1437134520
       },
       {
-        "user": {
-          "id": 2
-        },
+        "id": 7,
+        "user": 2,
         "text": "Hello from Arthur",
         "time": 1437134400
       },
       {
-        "user": {
-          "id": 1
-        },
+        "id": 8,
+        "user": 1,
         "text": "Hello from Tim",
         "time": 1437134460
       },
       {
-        "user": {
-          "id": 3
-        },
+        "id": 9,
+        "user": 3,
         "text": "Hello from Sam",
         "time": 1437134520
       },
       {
-        "user": {
-          "id": 2
-        },
+        "id": 10,
+        "user": 2,
         "text": "Hello from Arthur",
         "time": 1437134400
       },
       {
-        "user": {
-          "id": 1
-        },
+        "id": 11,
+        "user": 1,
         "text": "Hello from Tim",
         "time": 1437134460
       },
       {
-        "user": {
-          "id": 3
-        },
+        "id": 12,
+        "user": 3,
         "text": "Hello from Sam",
         "time": 1437134520
       }
@@ -101,68 +79,53 @@
   },
   {
     "id": 2,
-    "participants": [
-      {
-        "id": 1
-      },
-      {
-        "id": 2
-      }
-    ],
+    "participants": [1, 2],
     "messages": [
       {
-        "user": {
-          "id": 2
-        },
+        "id": 13,
+        "user": 2,
         "text": "Hello from Arthur",
         "time": 1437134400
       },
       {
-        "user": {
-          "id": 1
-        },
+        "id": 14,
+        "user": 1,
         "text": "Hello from Tim",
         "time": 1437134460
       },
       {
-        "user": {
-          "id": 2
-        },
+        "id": 15,
+        "user": 2,
         "text": "Hello from Arthur",
         "time": 1437134400
       },
       {
-        "user": {
-          "id": 1
-        },
+        "id": 16,
+        "user": 1,
         "text": "Hello from Tim",
         "time": 1437134460
       },
       {
-        "user": {
-          "id": 2
-        },
+        "id": 17,
+        "user": 2,
         "text": "Hello from Arthur",
         "time": 1437134400
       },
       {
-        "user": {
-          "id": 1
-        },
+        "id": 18,
+        "user": 1,
         "text": "Hello from Tim",
         "time": 1437134460
       },
       {
-        "user": {
-          "id": 2
-        },
+        "id": 19,
+        "user": 2,
         "text": "Hello from Arthur",
         "time": 1437134400
       },
       {
-        "user": {
-          "id": 1
-        },
+        "id": 20,
+        "user": 1,
         "text": "Hello from Tim",
         "time": 1437134460
       }

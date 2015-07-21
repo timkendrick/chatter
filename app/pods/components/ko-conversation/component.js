@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  conversation: null,
+  currentUser: null,
   messagesLoaded: function() {
     Ember.run.schedule('afterRender', () => {
       this.scrollToBottom({ animate: false });
@@ -17,21 +19,21 @@ export default Ember.Component.extend({
       };
       this.addObserver('conversation.messages', onMessagesChanged);
     }
-  }.observes('conversation.messages'),
+  }.observes('conversation.messages').on('init'),
   scrollToBottom: function({
     animate = false
   } = {}) {
-      let $messagesElement = this.$('.Conversation-messages');
-      let maxScroll = $messagesElement.prop('scrollHeight');
-      if (maxScroll <= 0) { return; }
-      let currentScrollPosition = $messagesElement.prop('scrollTop');
-      let isAlreadyAtBottom = currentScrollPosition >= maxScroll;
-      if (isAlreadyAtBottom) { return; }
-      if (animate) {
-        $messagesElement.animate({ scrollTop: maxScroll });
-      } else {
-        $messagesElement.prop({ scrollTop: maxScroll });
-      }
+    let $messagesElement = this.$('.Conversation-messages');
+    let maxScroll = $messagesElement.prop('scrollHeight');
+    if (maxScroll <= 0) { return; }
+    let currentScrollPosition = $messagesElement.prop('scrollTop');
+    let isAlreadyAtBottom = currentScrollPosition >= maxScroll;
+    if (isAlreadyAtBottom) { return; }
+    if (animate) {
+      $messagesElement.animate({ scrollTop: maxScroll });
+    } else {
+      $messagesElement.prop({ scrollTop: maxScroll });
+    }
   },
   actions: {
     onClose: function() {

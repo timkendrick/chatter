@@ -13,7 +13,10 @@
   </div>
   <div class="Conversation-messages">
     {{#each conversation.messages as |message|}}
-      {{ko-conversation/message message=message currentUser=currentUser}}
+      {{ko-conversation/message
+        message=message
+        currentUser=currentUser
+      }}
     {{/each}}
   </div>
 </div>
