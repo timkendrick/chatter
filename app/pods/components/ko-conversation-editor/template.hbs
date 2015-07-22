@@ -1,0 +1,16 @@
+<div class="ConverationEditor">
+  <div class="ConversationEditor-messages">
+    {{ko-conversation-editor/conversation
+      conversation=conversation
+      currentUser=currentUser
+      close="closeRequested"
+    }}
+  </div>
+  <div class="ConversationEditor-send">
+    {{ko-message-field
+      value=draft
+      focused=true
+      action="sendRequested"
+    }}
+  </div>
+</div>

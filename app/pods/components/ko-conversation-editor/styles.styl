@@ -1,0 +1,23 @@
+@import "conversation/styles";
+@import "pods/components/ko-message-field/styles";
+
+.ConversationEditor {
+}
+
+.ConversationEditor-messages {
+  position: absolute;
+  top: 0;
+  bottom: 70px;
+  width: 100%;
+
+  > .ember-view {
+    height: 100%;
+  }
+}
+
+.ConversationEditor-send {
+  position: absolute;
+  bottom: 0;
+  height: 70px + 1px;
+  border-top: 1px solid #eeeeee;
+}

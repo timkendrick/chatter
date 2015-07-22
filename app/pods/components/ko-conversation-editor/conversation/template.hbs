@@ -1,6 +1,6 @@
 <div class="Conversation">
   <div class="Conversation-title">
-    {{#each conversation.participants as |participant|}}
+    {{#each conversation.participants key="id" as |participant|}}
     <span class="bold">
       <i class="zmdi zmdi-account"></i> {{full-name participant }}
     </span>
@@ -12,8 +12,8 @@
     </span>
   </div>
   <div class="Conversation-messages">
-    {{#each conversation.messages as |message|}}
-      {{ko-conversation/message
+    {{#each conversation.messages key="id" as |message|}}
+      {{ko-conversation-editor/conversation/message
         message=message
         currentUser=currentUser
       }}

@@ -1,16 +1,9 @@
 <div class="ConversationView">
-  <div class="ConversationView-messages">
-    {{ko-conversation
-      conversation=model
-      currentUser=currentUser
-      close="close"
-    }}
-  </div>
-  <div class="ConversationView-send">
-    {{ko-message-field
-      value=state.draft
-      focused=true
-      action="sendMessage"
-    }}
-  </div>
+  {{ko-conversation-editor
+    conversation=model
+    currentUser=currentUser
+    draft=state.draft
+    sendRequested="sendMessage"
+    closeRequested="close"
+  }}
 </div>
