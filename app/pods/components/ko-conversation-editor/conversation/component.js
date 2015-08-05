@@ -4,7 +4,7 @@ export default Ember.Component.extend({
   conversation: null,
   currentUser: null,
   messagesLoaded: function() {
-    Ember.run.schedule('afterRender', () => {
+    Ember.run.scheduleOnce('afterRender', () => {
       this.scrollToBottom({ animate: false });
     });
     let messages = this.get('conversation.messages');
